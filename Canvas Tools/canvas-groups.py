@@ -21,7 +21,7 @@ filename = askopenfilename()
 df = pd.read_csv(filename)
 df['sections'] = df['sections'].str.slice(start=-3) 
 
-sectionsDF=df.groupby(['sections'])
+sectionsDF=df.groupby('sections')
 
 sortedDF = pd.DataFrame(columns=['name', 'canvas_user_id', 'user_id', 'login_id', 'sections', 'group_name'])
 for sectionNum, student in sectionsDF:
@@ -34,18 +34,18 @@ for sectionNum, student in sectionsDF:
                 indexList=group.index.tolist()
                 studentList = studentList.drop(indexList)
                 group=group.assign(group_name="Section: " + str(sectionNum)+" Lab 1: Group " + str(i))
-                sortedDF = sortedDF.append(group)
+                sortedDF = sortedDF._append(group)
             else:
                 group=studentList.assign(group_name="Section: " + str(sectionNum)+" Lab 1: Group " + str(i))
                 indexList=group.index.tolist()
                 studentList = studentList.drop(indexList)
-                sortedDF = sortedDF.append(group)
+                sortedDF = sortedDF._append(group)
         else:
             group=studentList.sample(n=2, replace=False)
             indexList=group.index.tolist()
             studentList = studentList.drop(indexList)
             group=group.assign(group_name="Section: " + str(sectionNum)+" Lab 1: Group " + str(i))
-            sortedDF = sortedDF.append(group)
+            sortedDF = sortedDF._append(group)
 
         i= i+1
 
