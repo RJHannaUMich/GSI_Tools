@@ -12,8 +12,8 @@ import numpy as np
 import math
 
 #labName = "Lab 1: Measurement of Reach Reaction Time (2255648)"
-labName = "Lab 1: Measurement of Reach Reaction Time (2466844)"
-totalPoints = 24
+labName = "Lab 1: Electrical Instruments (2466740)"
+totalPoints = 26
 
 # opens file dialogue window
 Tk().withdraw()
@@ -30,14 +30,14 @@ fig, axes = plt.subplots(rows,cols,figsize=(10,40),sharey=True, tight_layout=Tru
 
 i=0
 for g,d in df.groupby('Section'):
+    d[labName] = d[labName].str.replace('EX','-2')
     grades=d[labName].to_numpy(dtype='float', na_value=-1)
     ax = plt.subplot(rows, cols, i+1)
-    ax.hist(grades, bins=np.append([-1],list(range(totalPoints+1))), label = g)
+    ax.hist(grades, bins=np.append([-2,-1],list(range(totalPoints+1))), label = g)
     ax.set_title(str(g))
     ax.minorticks_on()
-    start, end = ax.get_xlim()
-    ax.xaxis.set_ticks(np.arange(0, totalPoints+1, 4))
+    ax.xaxis.set_ticks(np.arange(0, totalPoints+1, 2))
     
     i+=1
 
-plt.savefig('test.png')
+plt.savefig('2024-09-10-251-lab1-grades.png')
