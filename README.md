@@ -12,4 +12,6 @@ This will download the .csv file that you will modify with the gradescope-roster
 
 ## How to use the Canvas Group Maker 
 
+Because each Canvas course section is merged into one page, Canvas' auto group maker will put students from different sections into groups! To get around this, navigate to the People tab on Canvas, create a Group Set for the current lab, and download the course roster from the import groups button. Then, run canvas-groups.py, and a new .csv file will be created with the randomized groups of either 3 or 2. Finally, you will need to upload the groups by clicking on the import groups button. 
+
 ## How to use the Canvas Grading Updates
