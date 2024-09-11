@@ -2,9 +2,9 @@
 
 These are the tools that I use for getting the Canvas page and Gradescope page up and running. 
 
-## How to use Gradescope Roster Fixer 
+## How to use the Gradescope Roster Fixer 
 
-When the Gradescope course roster is synced with the Canvas page, you will notice that the students' section will read like physics-251-section-010 or biophys-251-section-010. This effectively duplicates the amount of sections. To merge the physics and biophysics sections, first download the roster from the roster tab in gradescope (there will be a buton ribbon at the bottom of the screen that will look like the following). 
+When the Gradescope course roster is synced with the Canvas page, you will notice that the students' section will read like physics-251-section-010 or biophys-251-section-010. This effectively duplicates the amount of sections. To merge the physics and biophysics sections, first download the roster from the roster tab in gradescope (there will be a button ribbon at the bottom of the screen that will look like the following). 
 
 ![image](https://github.com/user-attachments/assets/b3e5a203-d602-4088-99c0-7859f6603df6)
 
