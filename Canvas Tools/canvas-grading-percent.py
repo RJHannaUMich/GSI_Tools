@@ -37,7 +37,8 @@ for section,data in df.groupby('Section'):
         labCol = data.filter(regex=string)
         dashes = float(labCol.isnull().sum().sum())
         nondashes = float(labCol.notnull().sum().sum())
-        zeros = float((labCol == 0).sum().sum())
+        zerosM = labCol == "0.00"
+        zeros = zerosM.any(axis=1).sum() 
         if (math.isnan(dashes)) or (math.isnan(nondashes)):
             percentNon = 0
             percentDash = 1 
